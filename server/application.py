@@ -11,6 +11,7 @@ class BaseHandler(tornado.web.RequestHandler):
 			return self.application.db
 
 		# Get the current session from the db
+		self.set_header("Access-Control-Allow-Origin", "")
 	def get_current_session(self):
 		global ip_id
 
@@ -27,8 +28,6 @@ class BaseHandler(tornado.web.RequestHandler):
 		print "Current session is " + str(ip_id.index(ip_address))
 		return ip_id.index(ip_address)
 
-	# self.set_header("Access-Control-Allow-Origin", 
-	#	"http://liawesomesaucer.github.io")
 
 # This is a test for hello world
 class HelloHandler(BaseHandler):
