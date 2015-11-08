@@ -11,7 +11,7 @@ class BaseHandler(tornado.web.RequestHandler):
 			return self.application.db
 
 		# Get the current session from the db
-		self.set_header("Access-Control-Allow-Origin", "")
+		self.set_header("Access-Control-Allow-Origin", "http://nick11roberts.github.io/qCloud/")
 	def get_current_session(self):
 		global ip_id
 
