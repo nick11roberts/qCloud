@@ -27,6 +27,7 @@ function process(url_string) {
     }
     $('.boxes-wrapper').html(end_string);
 
+    $('.box').css({'float':'center'});
 }
 function getInput(ele) {
     document.getElementById("errorMessage").innerHTML = "";
