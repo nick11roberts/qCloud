@@ -76,8 +76,9 @@ h1.title {
 }
 
 .box {
-	display: inline-block;
-	width: 33%;
+	/*display: inline-block;*/
+	/*width: 33%;*/
+	text-align: center;
 }
 
 body {
@@ -89,7 +90,7 @@ body {
 	background-repeat: no-repeat;
 	background-position:  center;
 	height: 100vh;
-	overflow-x: hidden;
+	overflow: hidden;
 }
 
 .btn {
