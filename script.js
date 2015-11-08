@@ -3,7 +3,7 @@ var xmlhttp = new XMLHttpRequest();
 var URL = "http://localhost:5000/";
 
 xmlhttp.onreadystatechange = function() {
-    $(".title-wrapper").animate({'margin-top':'0px'}, 500);
+    // $(".title-wrapper").animate({'margin-top':'0px'}, 500);
     console.log("readyState = " + xmlhttp.readyState);
     console.log("status = " + xmlhttp.status);
     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
