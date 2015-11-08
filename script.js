@@ -6,11 +6,28 @@ xmlhttp.onreadystatechange = function() {
     console.log("readyState = " + xmlhttp.readyState);
     console.log("status = " + xmlhttp.status);
     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-	   //reply = JSON.parse(xmlhttp.responseText);
-	   //if (reply == 1){
-	   	   //do stuff//
-	   //	console.log("success");
-    	//}
+        // console.log("fdsJFADSKd");
+        // console.log(xmlhttp.responseText);
+
+        // if (xmlhttp.responseText == 1 || xmlhttp.responseText == "1") {
+        //     console.log("success");
+        //     console.log(xmlhttp.responseText);
+
+        // }
+        // else if (xmlhttp.responseText == undefined || !(xmlhttp.responseText) || xmlhttp.responseText == "None") {
+        //     console.log("success but undefined");
+        // }
+        // else if (/^[\],:{}\s]*$/.test(xmlhttp.responseText.replace(/\\["\\\/bfnrtu]/g, '@').
+        //     replace(/"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g, ']').
+        //     replace(/(?:^|:|,)(?:\s*\[)+/g, ''))) {
+    	   // reply = JSON.parse(xmlhttp.responseText);
+    	   // if (reply != null){
+    	   // 	   // do stuff//
+        // 	   	console.log("success");
+        //         console.log(reply);
+        // 	}
+        // }
+        console.log(xmlhttp.responseText);
     }
 }
 
@@ -45,10 +62,12 @@ function validation(str) {
 	return false;
 }
 
-$(document).ready(function(){  $("#demo").on("hide.bs.collapse", function(){
-    $(".btn").html('<span class="glyphicon glyphicon-collapse-down"></span> Open');
-  });
-  $("#demo").on("show.bs.collapse", function(){
-    $(".btn").html('<span class="glyphicon glyphicon-collapse-up"></span> Close');
-  });
-});
+// $(document).ready(function() {
+//     $("#demo").on("hide.bs.collapse", function(){
+//         $(".btn").html('<span class="glyphicon glyphicon-collapse-down"></span> Open');
+//     });
+//     $("#demo").on("show.bs.collapse", function(){
+//         $(".btn").html('<span class="glyphicon glyphicon-collapse-up"></span> Close');
+//     });
+//     $('body').scrollTo('#end');
+// });
