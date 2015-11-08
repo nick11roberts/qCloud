@@ -55,7 +55,8 @@ function getInput(ele) {
     	}
         //print out user error
         document.getElementById("errorMessage").innerHTML = "Invalid Syntax";
-    }        
+        document.getElementById("errorMessage").style.font = "italic bold 20px arial,serif"
+    }
 }
 
 function validation(str) {
