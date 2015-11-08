@@ -25,13 +25,16 @@ class Interpreter:
    def __init__(self, data):
       
       self.data = data
-      split_data = self.data.split()
+      self.split_data = self.data.split()
       
-      for word in split_data:
-         tokenized_data = self.tokenize(word)
+      for word in self.split_data:
+         self.tokenized_data.append(self.tokenize(word))
 
-      #for token_item in tokenized_data:
+      for token_item in self.tokenized_data:
          # Execute corresponding command
+         print token_item.type_name
+         print token_item.value
+         print ""
       
    def tokenize(self, word):
 
@@ -59,7 +62,13 @@ class Interpreter:
       elif word == self.READ: 
          token_type = self.RES
          token_name = self.READ
-      #else: 
-         # Must be either a NAME or a PHASE
+      elif word[0].isdigit(): 
+         # Must be a PHASE
+         token_type = self.PHASE
+         token_name = word
+      else: 
+         # Must be a NAME
+         token_type = self.NAME
+         token_name = word
 
       return Token(token_type, token_name)
