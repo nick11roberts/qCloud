@@ -71,11 +71,11 @@ class Interpreter:
 
       elif tokenized_data[0].type_name == self.PHASE:
          # This should not happen
-         print ERROR
+         print self.ERROR
 
       elif tokenized_data[0].type_name == self.NAME:
          # This should not happen
-         print ERROR
+         print self.ERROR
 
    def tokenize(self, word):
 
