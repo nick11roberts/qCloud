@@ -17,7 +17,9 @@ xmlhttp.onreadystatechange = function() {
         else if (xmlhttp.responseText == undefined || !(xmlhttp.responseText) || xmlhttp.responseText == "None") {
             console.log("success but undefined");
         }
-        else {
+        else if (/^[\],:{}\s]*$/.test(xmlhttp.responseText.replace(/\\["\\\/bfnrtu]/g, '@').
+            replace(/"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g, ']').
+            replace(/(?:^|:|,)(?:\s*\[)+/g, ''))) {
     	   reply = JSON.parse(xmlhttp.responseText);
     	   if (reply != null){
     	   	   // do stuff//
