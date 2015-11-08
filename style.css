@@ -31,8 +31,25 @@ img {
 }
 
 body {
-	background-image: url ("/res/2.jpg");
+	font-family: sans-serif;
+	background-image: url("res/3.jpg");
 	background-repeat: no-repeat;
 	background-position: center;
-	background-size: 100% ;
+	height: 100vh;
+}
+
+.btn {
+	margin-top: -40px;
+}
+
+.help {
+	border: 1px solid black;
+	background-color: white;
+	opacity: 0.5;
+	width: 100%;
+	text-align: center;
+}
+
+.helpText {
+	text-align: center;
 }
