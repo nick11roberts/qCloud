@@ -52,7 +52,14 @@ class HelloHandler(BaseHandler):
 		global curr_session
 		try:
 			data = self.request.body
+			# print data
+			# print data == "qubit yes"
 			if data:
+
+				if (data[0] == '"' and data[-1] == '"'):
+					data = data[1:-1]
+				# print data
+				# print data == "qubit yes"
 				result = curr_session.add(data)
 				self.write(str(result))
 			else:

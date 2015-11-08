@@ -20,7 +20,7 @@ class Interpreter:
    P_SHIFT = "pShift"
    READ = "read"
 
-   ERRROR = "error"
+   ERROR = "error"
 
    quantum_computer = {}
    # Dictionary of qubits for name access

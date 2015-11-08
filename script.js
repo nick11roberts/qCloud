@@ -6,11 +6,19 @@ xmlhttp.onreadystatechange = function() {
     console.log("readyState = " + xmlhttp.readyState);
     console.log("status = " + xmlhttp.status);
     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-	   //reply = JSON.parse(xmlhttp.responseText);
-	   //if (reply == 1){
-	   	   //do stuff//
-	   //	console.log("success");
-    	//}
+        if (xmlhttp.responseText == 1 || xmlhttp.responseText == "1") {
+            console.log("success");
+            console.log(xmlhttp.responseText);
+
+        }
+        else {
+    	   reply = JSON.parse(xmlhttp.responseText);
+    	   if (reply != null){
+    	   	   // do stuff//
+        	   	console.log("success");
+                console.log(reply);
+        	}
+        }
     }
 }
 
