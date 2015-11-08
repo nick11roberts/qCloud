@@ -1,4 +1,4 @@
-from token import *
+from qtoken import *
 from qubit import *
 from gate import *
 
@@ -112,4 +112,4 @@ class Interpreter:
          token_type = self.NAME
          token_name = word
 
-      return Token(token_type, token_name)
+      return QToken(token_type, token_name)

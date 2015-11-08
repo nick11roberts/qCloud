@@ -1,5 +1,5 @@
 
-class Token:
+class QToken:
    
    type_name = ""
    value = ""

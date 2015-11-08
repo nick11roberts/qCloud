@@ -3,7 +3,7 @@ import tornado.web
 import socket
 import urlparse    
 import sys
-sys.path.append("..") 
+sys.path.append("server") 
 from token import *
 import token
 import interpreter
@@ -54,7 +54,7 @@ class HelloHandler(BaseHandler):
 			data = self.request.body
 			if data:
 				result = curr_session.add(data)
-				self.write(result)
+				self.write(str(result))
 			else:
 				self.write("No data received")
 		except:
