@@ -13,7 +13,9 @@ class Qubit:
       print name
 
    def randomizeState(self):
-      v0 = random.random()
-      v1 = math.sqrt(1 - (v0 ** 2))
+      rand = random.random()
+      randComp = 1 - rand
+      v0 = math.sqrt(rand)
+      v1 = math.sqrt(randComp)
       print v0
       print v1
