@@ -20,16 +20,10 @@ xmlhttp.onreadystatechange = function() {
         // else if (/^[\],:{}\s]*$/.test(xmlhttp.responseText.replace(/\\["\\\/bfnrtu]/g, '@').
         //     replace(/"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g, ']').
         //     replace(/(?:^|:|,)(?:\s*\[)+/g, ''))) {
-        if (reply != null) {
+        if (xmlhttp.responseText != null) {
             reply = JSON.parse(xmlhttp.responseText);
             process(reply);
         }
-    	   // if (reply != null){
-    	   // 	   // do stuff//
-        // 	   	console.log("success");
-        //         console.log(reply);
-        // 	}
-        // }
         console.log(xmlhttp.responseText);
     }
 }
