@@ -3,6 +3,7 @@ var xmlhttp = new XMLHttpRequest();
 var URL = "http://localhost:5000/";
 
 xmlhttp.onreadystatechange = function() {
+    $(".title-wrapper").animate({'margin-top':'0px'}, 500);
     console.log("readyState = " + xmlhttp.readyState);
     console.log("status = " + xmlhttp.status);
     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
@@ -15,6 +16,17 @@ xmlhttp.onreadystatechange = function() {
     }
 }
 
+function process(url_strings) {
+    url_list = url_strings.split(' ');
+    end_string = '';
+    for (i = 0; i<url_list.length; i++ ) {
+        end_string = end_string + '<div class="box">'  + 
+                '<img src="' + url_list[i] + '" id="img1"/>' +
+            '</div>';
+    }
+    $('.boxes-wrapper').html(end_string);
+
+}
 function getInput(ele) {
     document.getElementById("errorMessage").innerHTML = "";
     if(event.keyCode == 13) {
@@ -35,11 +47,26 @@ function getInput(ele) {
         }
         //print out user error
         document.getElementById("errorMessage").innerHTML = result["error"];
-        document.getElementById("errorMessage").style.font = "bold 20px arial, serif";
+        // document.getElementById("errorMessage").style.font = "bold 20px";
         document.getElementById("errorMessage").style.color = "orange";
-        document.getElementById("errorMessage").style.backgroundColor = "grey";
+        document.getElementById("errorMessage").style.backgroundColor = "#e6e6e6";
     }        
 }
+
+
+sidebar_shown = false;
+
+$('#sidebar-toggle').click( function(){
+    if (sidebar_shown == false) {
+        $(".sidebar").animate({'left': '-300px'}, 500);
+        $(".wrapper").animate({'padding-left':'20px'},500);
+        sidebar_shown = true;
+    } else {
+        $(".sidebar").animate({'left': '0'}, 500);
+        $(".wrapper").animate({'padding-left':'300px'},500);
+        sidebar_shown = false;
+    }
+});
 
 function validation(str) {
     var arr = str.split(' ');

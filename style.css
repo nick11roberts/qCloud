@@ -1,3 +1,21 @@
+@font-face {
+	font-family: 'Open Sans';
+	src: url('OpenSans/OpenSans-Regular.ttf');
+}
+@font-face {
+	font-family: 'Open Sans Light';
+	src: url('OpenSans/OpenSans-Light.ttf');
+}
+* {
+	font-family: 'Open Sans Light', 'Open Sans', Helvetica, sans-serif;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
+a:hover, a:visited {
+	text-decoration:none !important;
+}
 .centerBox {
 	text-align: center;
 	vertical-align: center;
@@ -9,12 +27,40 @@ img {
 	width: 100%;
 	min-height: 300px;
 }
+h1.title {
+	font-size: 48px;
+	line-height: 50px;
+}
 #inputField {
 	width: 100%;
-	font-size: 200%;
-	margin-top: 300px;
+	/*font-size: 200%;*/
+	font-size: 32px;
+	line-height:50px;
+	background-color: rgba(0, 0, 0, 0.5);
+	/*margin-top: 300px;*/
 }
+.title-wrapper {
+	text-align: center;
+	color: white;
+	margin: 20% auto 10% auto;
+}
+#inputField {
+	/*background-color: rgba(255, 255, 255,0.5 );*/
+	color: white;
+	border: 2px solid white;
 
+}
+.sidebar {
+	/*float: right;*/
+	text-align: left;
+	z-index: 50;
+	height: 100%;
+	position: fixed;
+	left:-260px;
+	top: 0;
+
+	color: white;
+}
 
 .wrapper {
 	margin: auto;
@@ -25,6 +71,9 @@ img {
 	text-align: center;
 
 }
+#inputField:focus {
+    outline: 0;
+}
 
 .box {
 	display: inline-block;
@@ -32,11 +81,15 @@ img {
 }
 
 body {
-	font-family: sans-serif;
-	background-image: url("res/3.jpg");
+	background: url("res/3.jpg") no-repeat center center;
+	-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 	background-repeat: no-repeat;
 	background-position:  center;
 	height: 100vh;
+	overflow-x: hidden;
 }
 
 .btn {
@@ -52,5 +105,42 @@ body {
 }
 
 .helpText {
+	font-size: 18px;
 	text-align: center;
+}
+
+.sidebar-icon {
+	vertical-align: top;
+	margin: 20px 20px 20px 20px;
+	color: white;
+}
+.sidebar-content {
+	/*background-color: #e6e6e6;*/
+	border-right: 4px solid;
+	padding: 20px 20px 20px 20px;
+	height: 100%;
+		background-color: rgba(0, 0, 0,0.5);
+
+	width: 280px;
+	/*background-color: white;*/
+}
+.sidebar-title {
+	text-align: center;
+	border-bottom: 2px solid;
+	margin-bottom: 14px;
+	padding-bottom: 5px;
+}
+.sidebar-elem {
+	width: 100%;
+}
+#sidebar-list li {
+	height: 35px;
+}
+.sidebar-elem p {
+	font-size: 22px;
+	line-height: 30px;
+	display: inline-block;
+}
+.sidebar-content, .sidebar-icon {
+	display: inline-block;
 }
