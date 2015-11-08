@@ -19,15 +19,14 @@
 
 	<script>
 	var reservedWords = ["qubit", 'H', "pX", "pY", "pZ", "pShift", "read"];
-
 	var xmlhttp = new XMLHttpRequest();
 	var URL = "http://localhost:5000/";
-
 	xmlhttp.onreadystatechange = function() {
 		console.log("readyState = " + xmlhttp.readyState);
 		console.log("status = " + xmlhttp.status);
 		if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-			if (JSON.parse(xmlhttp.responseText) == 1){
+			reply = JSON.parse(xmlhttp.responseText);
+			if (reply == 1){
 				//do stuff
 				console.log("success");
 			}
