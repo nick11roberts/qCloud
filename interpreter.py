@@ -18,19 +18,17 @@ class Interpreter:
    P_SHIFT = "pShift"
    READ = "read"
 
-   data = ""
-   split_data = []
-   tokenized_data = []
-
    def __init__(self, data):
       
-      self.data = data
-      self.split_data = self.data.split()
+      split_data = []
+      tokenized_data = []
       
-      for word in self.split_data:
-         self.tokenized_data.append(self.tokenize(word))
+      split_data = data.split()
+      
+      for word in split_data:
+         tokenized_data.append(self.tokenize(word))
 
-      for token_item in self.tokenized_data:
+      for token_item in tokenized_data:
          # Execute corresponding command
          print token_item.type_name
          print token_item.value
