@@ -64,9 +64,12 @@ class HelloHandler(BaseHandler):
 				self.write(str(result))
 			else:
 				self.write("No data received")
+				return
 		except:
 			raise
 			self.write("something horrible happened")
+
+		return result
 
 
 class Application(tornado.web.Application):
