@@ -7,7 +7,7 @@ xmlhttp.onreadystatechange = function() {
     console.log("status = " + xmlhttp.status);
     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
         // console.log("fdsJFADSKd");
-        // console.log(xmlhttp.responseText);
+        console.log(xmlhttp.responseText);
 
         // if (xmlhttp.responseText == 1 || xmlhttp.responseText == "1") {
         //     console.log("success");
@@ -20,7 +20,10 @@ xmlhttp.onreadystatechange = function() {
         // else if (/^[\],:{}\s]*$/.test(xmlhttp.responseText.replace(/\\["\\\/bfnrtu]/g, '@').
         //     replace(/"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g, ']').
         //     replace(/(?:^|:|,)(?:\s*\[)+/g, ''))) {
-    	   // reply = JSON.parse(xmlhttp.responseText);
+        if (reply != null) {
+            reply = JSON.parse(xmlhttp.responseText);
+            process(reply);
+        }
     	   // if (reply != null){
     	   // 	   // do stuff//
         // 	   	console.log("success");
@@ -29,6 +32,9 @@ xmlhttp.onreadystatechange = function() {
         // }
         console.log(xmlhttp.responseText);
     }
+}
+function process(arrayName) {
+    
 }
 
 function getInput(ele) {
