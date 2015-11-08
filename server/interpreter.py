@@ -43,6 +43,7 @@ class Interpreter:
          if tokenized_data[0].value == self.QUBIT:
             # Create a new qubit
             self.quantum_computer[qubit_name] = Qubit(qubit_name)
+            return Gate.qubit_init(self.quantum_computer[qubit_name])
 
          elif tokenized_data[0].value == self.H:
             # Compute the 2*2 Hadamard transformation on the qubit
