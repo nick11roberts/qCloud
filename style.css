@@ -82,6 +82,7 @@ h1.title {
 	/*display: inline-block;*/
 	/*width: 33%;*/
 	text-align: center;
+	float:center;
 }
 
 body {

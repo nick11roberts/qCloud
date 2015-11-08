@@ -22,7 +22,7 @@ function process(url_string) {
     end_string = '';
     for (i = 0; i<url_list.length; i++ ) {
         end_string = end_string + '<div class="box">'  + 
-                '<img src="' + url_list[i] + '" id="img1"/>' +
+                '<img src="' + url_list[i] + '"class="ret_img" id="img'+i+'"/>' +
             '</div>';
     }
     $('.boxes-wrapper').html(end_string);
