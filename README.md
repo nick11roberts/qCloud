@@ -1,2 +1,2 @@
 # qCloud
-RESTful quantum computing simulator using the Wolfram Alpha api. 
+Cloud based quantum computing simulator with a simple scripting language.
