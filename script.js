@@ -11,6 +11,9 @@ xmlhttp.onreadystatechange = function() {
             console.log(xmlhttp.responseText);
 
         }
+        else if (xmlhttp.responseText == undefined) {
+            console.log("success but undefined");
+        }
         else {
     	   reply = JSON.parse(xmlhttp.responseText);
     	   if (reply != null){
