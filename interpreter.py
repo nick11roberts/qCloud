@@ -1,4 +1,5 @@
 from token import *
+from qubit import *
 
 class Interpreter:
    
@@ -18,8 +19,10 @@ class Interpreter:
    P_SHIFT = "pShift"
    READ = "read"
 
-   def __init__(self, data):
-      
+   quantum_computer = []
+   
+   def add(self, data):
+
       split_data = []
       tokenized_data = []
       
@@ -33,7 +36,7 @@ class Interpreter:
          print token_item.type_name
          print token_item.value
          print ""
-      
+
    def tokenize(self, word):
 
       token_type = ""
