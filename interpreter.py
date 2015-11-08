@@ -19,8 +19,11 @@ class Interpreter:
    P_SHIFT = "pShift"
    READ = "read"
 
-   quantum_computer = []
-   
+   ERRROR = "error"
+
+   quantum_computer = {}
+   # Dictionary of qubits for name access
+
    def add(self, data):
 
       split_data = []
@@ -32,7 +35,50 @@ class Interpreter:
          tokenized_data.append(self.tokenize(word))
 
       for token_item in tokenized_data:
+               
+         qubit_name = tokenized_data[1].value
+         
          # Execute corresponding command
+         if tokenized_data[0].type_name == self.RES:
+
+            if tokenized_data[0].value == self.QUBIT:
+               # Create a new qubit
+               self.quantum_computer[qubit_name] = Qubit(qubit_name)
+
+            elif tokenized_data[0].value == self.H:
+               # Compute the 2*2 Hadamard transformation on the qubit
+               
+
+            elif tokenized_data[0].value == self.PX:
+               # 
+               print ""
+
+            elif tokenized_data[0].value == self.PY:
+               # 
+               print ""
+
+            elif tokenized_data[0].value == self.PZ:
+               #
+               print ""
+
+            elif tokenized_data[0].value == self.P_SHIFT:
+               # 
+               print ""
+
+            elif tokenized_data[0].value == self.READ:
+               # 
+               print ""
+
+         elif tokenized_data[0].type_name == self.PHASE:
+            # This should not happen
+            print ERROR
+
+         elif tokenized_data[0].type_name == self.NAME:
+            # This should not happen
+            print ERROR
+
+      for token_item in tokenized_data:
+         # Print the current data for debugging
          print token_item.type_name
          print token_item.value
          print ""
