@@ -61,8 +61,7 @@ class HelloHandler(BaseHandler):
 				# print data
 				# print data == "qubit yes"
 				result = curr_session.add(data)
-				# self.write(str(result))
-				self.write("fdsa")
+				self.write(str(result))
 			else:
 				self.write("No data received")
 				return
@@ -70,7 +69,7 @@ class HelloHandler(BaseHandler):
 			raise
 			self.write("something horrible happened")
 
-		return result
+		print result
 
 
 class Application(tornado.web.Application):
