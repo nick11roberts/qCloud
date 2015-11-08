@@ -31,9 +31,9 @@ function process(url_string) {
 function getInput(ele) {
     document.getElementById("errorMessage").innerHTML = "";
     if(event.keyCode == 13) {
-        for(var i = 1; i <= 3; i++){
-            document.getElementById("img"+i).src = "https://upload.wikimedia.org/wikipedia/commons/2/26/Microchip_PIC24HJ32GP202.jpg";
-        }
+        // for(var i = 1; i <= 3; i++){
+            // document.getElementById("img"+i).src = "https://upload.wikimedia.org/wikipedia/commons/2/26/Microchip_PIC24HJ32GP202.jpg";
+        // }
         if (ele.value == "")
             return;
         var inputStr = ele.value;
@@ -58,6 +58,7 @@ function getInput(ele) {
 sidebar_shown = false;
 
 $('#sidebar-toggle').click( function(){
+    console.log("sidebar-toggle clicked")
     if (sidebar_shown == false) {
         $(".sidebar").animate({'left': '-300px'}, 500);
         $(".wrapper").animate({'padding-left':'20px'},500);
