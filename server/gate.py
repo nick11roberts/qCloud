@@ -134,7 +134,7 @@ class Gate:
 
       for pod in result.Pods():
          waPod = wap.Pod(pod)
-         if waPod.Title()[0] == "Result":
+         if waPod.Title()[0] == "Input":
             for subpod in waPod.Subpods():
                waSubpod = wap.Subpod(subpod)
                plaintext = waSubpod.Plaintext()[0]
@@ -199,7 +199,7 @@ class Gate:
 
       for pod in result.Pods():
          waPod = wap.Pod(pod)
-         if waPod.Title()[0] == "Result":
+         if waPod.Title()[0] == "Input":
             for subpod in waPod.Subpods():
                waSubpod = wap.Subpod(subpod)
                plaintext = waSubpod.Plaintext()[0]
@@ -264,7 +264,7 @@ class Gate:
 
       for pod in result.Pods():
          waPod = wap.Pod(pod)
-         if waPod.Title()[0] == "Result":
+         if waPod.Title()[0] == "Input":
             for subpod in waPod.Subpods():
                waSubpod = wap.Subpod(subpod)
                plaintext = waSubpod.Plaintext()[0]
