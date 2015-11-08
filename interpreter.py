@@ -1,5 +1,6 @@
 from token import *
 from qubit import *
+from gate import *
 
 class Interpreter:
    
@@ -32,50 +33,49 @@ class Interpreter:
       split_data = data.split()
       
       for word in split_data:
-         tokenized_data.append(self.tokenize(word))
-
-      for token_item in tokenized_data:
+         tokenized_data.append(self.tokenize(word)) 
                
-         qubit_name = tokenized_data[1].value
-         
-         # Execute corresponding command
-         if tokenized_data[0].type_name == self.RES:
+      qubit_name = tokenized_data[1].value
+      
+      # Execute corresponding command
+      if tokenized_data[0].type_name == self.RES:
 
-            if tokenized_data[0].value == self.QUBIT:
-               # Create a new qubit
-               self.quantum_computer[qubit_name] = Qubit(qubit_name)
+         if tokenized_data[0].value == self.QUBIT:
+            # Create a new qubit
+            self.quantum_computer[qubit_name] = Qubit(qubit_name)
 
-            elif tokenized_data[0].value == self.H:
-               # Compute the 2*2 Hadamard transformation on the qubit
-               
+         elif tokenized_data[0].value == self.H:
+            # Compute the 2*2 Hadamard transformation on the qubit
+            Gate.hadamard(self.quantum_computer[qubit_name])
 
-            elif tokenized_data[0].value == self.PX:
-               # 
-               print ""
+         elif tokenized_data[0].value == self.PX:
+            # 
+            Gate.pauli_x(self.quantum_computer[qubit_name])
 
-            elif tokenized_data[0].value == self.PY:
-               # 
-               print ""
+         elif tokenized_data[0].value == self.PY:
+            # 
+            Gate.pauli_y(self.quantum_computer[qubit_name])
 
-            elif tokenized_data[0].value == self.PZ:
-               #
-               print ""
+         elif tokenized_data[0].value == self.PZ:
+            #
+            Gate.pauli_z(self.quantum_computer[qubit_name])
 
-            elif tokenized_data[0].value == self.P_SHIFT:
-               # 
-               print ""
+         elif tokenized_data[0].value == self.P_SHIFT:
+            # 
+            phi = tokenized_data[2].value
+            Gate.phase_shift(self.quantum_computer[qubit_name], phi)
 
-            elif tokenized_data[0].value == self.READ:
-               # 
-               print ""
+         elif tokenized_data[0].value == self.READ:
+            # 
+            Gate.read(self.quantum_computer[qubit_name])
 
-         elif tokenized_data[0].type_name == self.PHASE:
-            # This should not happen
-            print ERROR
+      elif tokenized_data[0].type_name == self.PHASE:
+         # This should not happen
+         print ERROR
 
-         elif tokenized_data[0].type_name == self.NAME:
-            # This should not happen
-            print ERROR
+      elif tokenized_data[0].type_name == self.NAME:
+         # This should not happen
+         print ERROR
 
       for token_item in tokenized_data:
          # Print the current data for debugging

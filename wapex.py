@@ -21,6 +21,7 @@ __version__ = '1.1-devel'
 
 import wap
 import urllib
+import json
 
 #url = 'http://preview.wolframalpha.com/api/v1/query.jsp'
 #url = 'http://preview.wolframalpha.com/api/v1/validatequery.jsp'
