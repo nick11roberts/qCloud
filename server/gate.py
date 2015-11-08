@@ -5,6 +5,23 @@ import json
 
 class Gate:
 
+   @staticmethod
+   def qubit_init(quantum_bit):
+      v_0 = quantum_bit.v_0
+      v_1 = quantum_bit.v_1
+      print "hadamard check"
+      server = 'http://api.wolframalpha.com/v1/query.jsp'
+      appid = 'XWQ95Q-4Y54GGJEGR'
+      input = '{' + str(v_0)  + ',' + str(v_1) + '}'
+
+      waeo = wap.WolframAlphaEngine(appid, server)
+      query = waeo.CreateQuery(input)
+      result = waeo.PerformQuery(query)
+      waeqr = wap.WolframAlphaQueryResult(result)
+      jsonresult = waeqr.JsonResult()
+
+      return jsonresult
+
    @staticmethod   
    def hadamard(quantum_bit):
       v_0 = quantum_bit.v_0
