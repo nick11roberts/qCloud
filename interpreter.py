@@ -46,28 +46,28 @@ class Interpreter:
 
          elif tokenized_data[0].value == self.H:
             # Compute the 2*2 Hadamard transformation on the qubit
-            Gate.hadamard(self.quantum_computer[qubit_name])
+            return Gate.hadamard(self.quantum_computer[qubit_name])
 
          elif tokenized_data[0].value == self.PX:
             # 
-            Gate.pauli_x(self.quantum_computer[qubit_name])
+            return Gate.pauli_x(self.quantum_computer[qubit_name])
 
          elif tokenized_data[0].value == self.PY:
             # 
-            Gate.pauli_y(self.quantum_computer[qubit_name])
+            return Gate.pauli_y(self.quantum_computer[qubit_name])
 
          elif tokenized_data[0].value == self.PZ:
             #
-            Gate.pauli_z(self.quantum_computer[qubit_name])
+            return Gate.pauli_z(self.quantum_computer[qubit_name])
 
          elif tokenized_data[0].value == self.P_SHIFT:
             # 
             phi = tokenized_data[2].value
-            Gate.phase_shift(self.quantum_computer[qubit_name], phi)
+            return Gate.phase_shift(self.quantum_computer[qubit_name], phi)
 
          elif tokenized_data[0].value == self.READ:
             # 
-            Gate.read(self.quantum_computer[qubit_name])
+            return Gate.read(self.quantum_computer[qubit_name])
 
       elif tokenized_data[0].type_name == self.PHASE:
          # This should not happen
@@ -76,12 +76,6 @@ class Interpreter:
       elif tokenized_data[0].type_name == self.NAME:
          # This should not happen
          print ERROR
-
-      for token_item in tokenized_data:
-         # Print the current data for debugging
-         print token_item.type_name
-         print token_item.value
-         print ""
 
    def tokenize(self, word):
 
