@@ -12,7 +12,7 @@ xmlhttp.onreadystatechange = function() {
         //     reply = JSON.parse(xmlhttp.responseText);
         //     process(reply);
         // }
-        process(reply);
+        process(xmlhttp.responseText);
         console.log(xmlhttp.responseText);
     }
 }
