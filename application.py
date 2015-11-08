@@ -61,7 +61,8 @@ class HelloHandler(BaseHandler):
 				# print data
 				# print data == "qubit yes"
 				result = curr_session.add(data)
-				self.write(str(result))
+				# self.write(str(result))
+				self.write("fdsa")
 			else:
 				self.write("No data received")
 				return
