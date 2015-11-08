@@ -21,6 +21,7 @@ __version__ = '1.1-devel'
 
 import wap
 import urllib
+import json
 
 #url = 'http://preview.wolframalpha.com/api/v1/query.jsp'
 #url = 'http://preview.wolframalpha.com/api/v1/validatequery.jsp'
@@ -29,7 +30,7 @@ import urllib
 
 server = 'http://api.wolframalpha.com/v1/query.jsp'
 appid = 'XWQ95Q-4Y54GGJEGR'
-input = '2 + 2'
+input = '{{1,0},{0, exp(i*(pi/4))}}'
 
 waeo = wap.WolframAlphaEngine(appid, server)
 query = waeo.CreateQuery(input)

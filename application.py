@@ -2,6 +2,16 @@ import os
 import tornado.web
 import socket
 import urlparse    
+import sys
+sys.path.append("server") 
+from token import *
+import token
+import interpreter
+from interpreter import *
+import qubit
+import gate
+from qubit import *
+from gate import *
 
 ip_id = []	# array of ip addresses
 
@@ -28,7 +38,7 @@ class BaseHandler(tornado.web.RequestHandler):
 
 		print "Current session is " + str(ip_id.index(ip_address))
 		return ip_id.index(ip_address)
-
+curr_session = Interpreter()
 
 # This is a test for hello world
 class HelloHandler(BaseHandler):
@@ -39,9 +49,14 @@ class HelloHandler(BaseHandler):
 			print("Hello failed")
 			raise
 	def post(self):
+		global curr_session
 		try:
-			stuff = self.get_argument('stuff', '')
-			self.write("you sent me: " + stuff)
+			data = self.request.body
+			if data:
+				result = curr_session.add(data)
+				self.write(str(result))
+			else:
+				self.write("No data received")
 		except:
 			raise
 			self.write("something horrible happened")
