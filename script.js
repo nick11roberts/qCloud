@@ -6,27 +6,28 @@ xmlhttp.onreadystatechange = function() {
     console.log("readyState = " + xmlhttp.readyState);
     console.log("status = " + xmlhttp.status);
     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-        console.log("fdsJFADSKd");
+        // console.log("fdsJFADSKd");
+        // console.log(xmlhttp.responseText);
+
+        // if (xmlhttp.responseText == 1 || xmlhttp.responseText == "1") {
+        //     console.log("success");
+        //     console.log(xmlhttp.responseText);
+
+        // }
+        // else if (xmlhttp.responseText == undefined || !(xmlhttp.responseText) || xmlhttp.responseText == "None") {
+        //     console.log("success but undefined");
+        // }
+        // else if (/^[\],:{}\s]*$/.test(xmlhttp.responseText.replace(/\\["\\\/bfnrtu]/g, '@').
+        //     replace(/"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g, ']').
+        //     replace(/(?:^|:|,)(?:\s*\[)+/g, ''))) {
+    	   // reply = JSON.parse(xmlhttp.responseText);
+    	   // if (reply != null){
+    	   // 	   // do stuff//
+        // 	   	console.log("success");
+        //         console.log(reply);
+        // 	}
+        // }
         console.log(xmlhttp.responseText);
-
-        if (xmlhttp.responseText == 1 || xmlhttp.responseText == "1") {
-            console.log("success");
-            console.log(xmlhttp.responseText);
-
-        }
-        else if (xmlhttp.responseText == undefined || !(xmlhttp.responseText) || xmlhttp.responseText == "None") {
-            console.log("success but undefined");
-        }
-        else if (/^[\],:{}\s]*$/.test(xmlhttp.responseText.replace(/\\["\\\/bfnrtu]/g, '@').
-            replace(/"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g, ']').
-            replace(/(?:^|:|,)(?:\s*\[)+/g, ''))) {
-    	   reply = JSON.parse(xmlhttp.responseText);
-    	   if (reply != null){
-    	   	   // do stuff//
-        	   	console.log("success");
-                console.log(reply);
-        	}
-        }
     }
 }
 
