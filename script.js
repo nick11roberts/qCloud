@@ -8,16 +8,17 @@ xmlhttp.onreadystatechange = function() {
     console.log("status = " + xmlhttp.status);
     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
       
-        if (xmlhttp.responseText != null) {
-            reply = JSON.parse(xmlhttp.responseText);
-            process(reply);
-        }
+        // if (xmlhttp.responseText != null) {
+        //     reply = JSON.parse(xmlhttp.responseText);
+        //     process(reply);
+        // }
+        process(reply);
         console.log(xmlhttp.responseText);
     }
 }
 
-function process(url_strings) {
-    url_list = url_strings.split(' ');
+function process(url_string) {
+    url_list = url_string.split(' ');
     end_string = '';
     for (i = 0; i<url_list.length; i++ ) {
         end_string = end_string + '<div class="box">'  + 

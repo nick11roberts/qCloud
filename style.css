@@ -114,6 +114,9 @@ body {
 	margin: 20px 20px 20px 20px;
 	color: white;
 }
+#errorMesssage {
+	font-size: 18px;
+}
 .sidebar-content {
 	/*background-color: #e6e6e6;*/
 	border-right: 4px solid;
