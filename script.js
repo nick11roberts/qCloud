@@ -6,6 +6,9 @@ xmlhttp.onreadystatechange = function() {
     console.log("readyState = " + xmlhttp.readyState);
     console.log("status = " + xmlhttp.status);
     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        console.log("fdsJFADSKd");
+        console.log(xmlhttp.responseText);
+
         if (xmlhttp.responseText == 1 || xmlhttp.responseText == "1") {
             console.log("success");
             console.log(xmlhttp.responseText);
