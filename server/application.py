@@ -40,8 +40,12 @@ class HelloHandler(BaseHandler):
 			raise
 	def post(self):
 		try:
-			stuff = self.get_argument('stuff', '')
-			self.write("you sent me: " + stuff)
+			data = self.request.body	
+			if data:
+				exec data
+
+			else:
+				self.write("No data received")
 		except:
 			raise
 			self.write("something horrible happened")
