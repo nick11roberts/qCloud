@@ -82,6 +82,7 @@ h1.title {
 .box {
 	/*display: inline-block;*/
 	/*width: 33%;*/
+	margin: auto;
 	text-align: center;
 	float:center;
 }
