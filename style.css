@@ -1,6 +1,7 @@
 .centerBox {
 	text-align: center;
 	vertical-align: center;
+	margin-top: -30px;
 }
 
 img {
@@ -34,12 +35,12 @@ body {
 	font-family: sans-serif;
 	background-image: url("res/3.jpg");
 	background-repeat: no-repeat;
-	background-position: center;
+	background-position:  center;
 	height: 100vh;
 }
 
 .btn {
-	margin-top: -40px;
+	margin-top: -5px;
 }
 
 .help {
